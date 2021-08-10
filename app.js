@@ -65,5 +65,5 @@ console.log(Math.floor(Math.random() * 100 + 1))
 
 logAll1() // sync
 logAll2() // callback
-// logAll3() // promise
-// logAll4() // async await
+logAll3() // promise
+logAll4() // async await

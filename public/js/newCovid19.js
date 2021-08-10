@@ -9,7 +9,7 @@ const realData = async () => {
   return covidConfirmed
 }
 
-document.getElementById('idbtn1').addEventListener('click', async () => {
+document.getElementById('idbtncovid19').addEventListener('click', async () => {
   console.log('clicked!!')
   const test = await realData()
   document.getElementById('idlbl1').innerText = test
