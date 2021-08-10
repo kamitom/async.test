@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="container">
-      <h3>Total Covid Cases</h3>
-      <h2 id="total-cases">Loading...</h2>
+    <meta name="description" content="Basic here" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Trirong"
+    />
 
-      <h3>Total Cases in Hubei (City of Origin)</h3>
-      <h2 id="city-of-origin">Loading...</h2>
-    </div>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/alpha.css" />
+    <script src="./js/aa-alpha.js"></script>
+    <title>API calls</title>
     <script>
       console.log("index.html 7 | Get Covid Data");
 
@@ -40,33 +40,24 @@
           covidData.confirmed.detail
         );
         console.log("index.html 31 | detail Data", detailData);
-        const dd = detailData[1].countryRegion + "," + detailData[1].confirmed;
+        const dd =
+          detailData[919].countryRegion + "," + detailData[919].confirmed;
         document.getElementById("city-of-origin").innerText = dd;
       };
 
       callDataInOrder();
     </script>
-    <style>
-      body {
-        background-color: #f3f4f6;
-      }
+  </head>
+  <body>
+    <div id="container">
+      <h3>Total Covid Cases</h3>
+      <h2 id="total-cases">Loading...</h2>
 
-      #container {
-        padding: 30px;
-        background-color: white;
-        margin: 20px;
-        box-shadow: 0 0 3px 3px #dad0d0;
-      }
-
-      #container > h2,
-      h3 {
-        color: black;
-      }
-
-      #container > h2 {
-        font-size: 2em;
-        color: red;
-      }
-    </style>
+      <h3>Total Cases in Hubei (City of Origin)</h3>
+      <h2 id="city-of-origin">Loading...</h2>
+    </div>
+    <div id="container2">
+      <a href="./hello.html">go to Hello</a>
+    </div>
   </body>
 </html>
