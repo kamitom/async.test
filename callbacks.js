@@ -6,7 +6,7 @@ setTimeout(() => {
 const geocode = (address, callback) => {
   setTimeout(() => {
     const data = {
-      latitude: '0',
+      latitude: address,
       longitude: '0'
     }
 
@@ -20,8 +20,7 @@ geocode('ny', (data2) => {
 
 const addTest = (n1, n2, callbackFunc) => {
   setTimeout(() => {
-    const ansData = n1 + n2
-    callbackFunc(ansData)
+    callbackFunc(n1 + n2)
   }, 2000)
 }
 

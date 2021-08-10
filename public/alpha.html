@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h3>Total Covid Cases</h3>
+      <h2 id="total-cases">Loading...</h2>
+
+      <h3>Total Cases in Hubei (City of Origin)</h3>
+      <h2 id="city-of-origin">Loading...</h2>
+    </div>
+    <script>
+      console.log("index.html 7 | Get Covid Data");
+
+      const getCovidData = async () => {
+        console.log("index.html 10 | Processing...");
+        const request = await fetch("https://covid19.mathdro.id/api");
+        const data = await request.json();
+        return data;
+      };
+
+      const getMoreAPIDataWithUrl = async (newUrl) => {
+        const request = await fetch(newUrl);
+        const data = await request.json();
+        return data;
+      };
+
+      const callDataInOrder = async () => {
+        const covidData = await getCovidData();
+        console.log("index.html 27 | covid Data", covidData);
+        document.getElementById("total-cases").innerText =
+          covidData.confirmed.value;
+
+        const detailData = await getMoreAPIDataWithUrl(
+          covidData.confirmed.detail
+        );
+        console.log("index.html 31 | detail Data", detailData);
+        const dd = detailData[1].countryRegion + "," + detailData[1].confirmed;
+        document.getElementById("city-of-origin").innerText = dd;
+      };
+
+      callDataInOrder();
+    </script>
+    <style>
+      body {
+        background-color: #f3f4f6;
+      }
+
+      #container {
+        padding: 30px;
+        background-color: white;
+        margin: 20px;
+        box-shadow: 0 0 3px 3px #dad0d0;
+      }
+
+      #container > h2,
+      h3 {
+        color: black;
+      }
+
+      #container > h2 {
+        font-size: 2em;
+        color: red;
+      }
+    </style>
+  </body>
+</html>

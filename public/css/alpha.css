@@ -1,0 +1,30 @@
+body {
+  font-family: "Trirong", serif;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+input {
+  width: 60px;
+}
+
+.parent3 {
+  background-color: lightcoral;
+  display: flex;
+  /* flex-direction: row-reverse; */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.child3 {
+  background-color: #c8dcd1ec;
+  /* width: 200px; */
+  height: 100px;
+  border-style: groove;
+  margin: 1rem;
+}
